@@ -8,14 +8,14 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// app.get("/", async (req, res) => {
-//   try {
-//     const StudentsData = await Student.find();
-//     res.send(StudentsData);
-//   } catch (e) {
-//     res.send(e);
-//   }
-// });
+app.get("/", async (req, res) => {
+  try {
+    const StudentsData = await Register.find();
+    res.send(StudentsData);
+  } catch (e) {
+    res.send(e);
+  }
+});
 
 app.post("/Create", async (req, res) => {
   console.log(req.body);
